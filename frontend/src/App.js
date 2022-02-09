@@ -1,12 +1,12 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
-import Login from "./components/Login";
+import { Login } from "./components";
 import Home from "./containers/Home";
 
 function App() {
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/*" element={<Home />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/*' element={<Home />} />
     </Routes>
   );
 }
