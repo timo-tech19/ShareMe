@@ -10,7 +10,6 @@ import {
 } from "../utils/data";
 import MasonryLayout from "./MasonryLayout";
 import Spinner from "./Spinner";
-import { FcGoogle } from "react-icons/fc";
 import { AiOutlineLogout } from "react-icons/ai";
 
 const randomImage =
