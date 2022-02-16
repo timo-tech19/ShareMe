@@ -4,19 +4,12 @@ import { RiHomeFill } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
 
 import logo from "../assets/logo.png";
+import { categories } from "../utils/data";
 
 const notActiveStyles =
   "flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize";
 const activeStyles =
   "flex items-center px-5 gap-3 font-extrabold border-r-2 border-black transition-all duration-200 ease-in-out capitalize";
-
-const categories = [
-  { name: "Animals" },
-  { name: "Wallpapers" },
-  { name: "Gaming" },
-  { name: "Photography" },
-  { name: "Coding" },
-];
 
 const SideBar = ({ user, closeToggle }) => {
   const handleCloseSideBar = () => {
@@ -47,7 +40,7 @@ const SideBar = ({ user, closeToggle }) => {
           <h3 className='mt-2 px-5 text-base 2xl:text-xl'>
             Discover Categories
           </h3>
-          {categories.slice(0, categories.length - 1).map(({ name }) => (
+          {categories.slice(0, categories.length - 1).map(({ name, image }) => (
             <NavLink
               key={name}
               to={`/category/${name}`}
@@ -56,6 +49,11 @@ const SideBar = ({ user, closeToggle }) => {
               }
               onClick={handleCloseSideBar}
             >
+              <img
+                src={image}
+                alt='Category'
+                className='w-8 h-8 rounded-full shadow-sm'
+              />
               {name}
             </NavLink>
           ))}
